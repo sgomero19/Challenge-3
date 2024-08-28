@@ -2,25 +2,35 @@ import os
 import csv
 election_path= r"C:\Users\balth\OneDrive\Desktop\Phyton\Challenge-3\PyPoll\Resources\election_data.csv"
 with open(election_path) as csv_file:
-  csv_reader=csv.reader(csv_file, delimeter=",")
+  csv_reader=csv.reader(csv_file, delimiter=",")
   csv_header=next(csv_reader)
-  candidates_name=[]
-  Final_candidates_list=[]
-  Votes_count=[]
-for row in csv_reader:
-  candidates_name.append(row[2])
-  if not row[2] in Final_candidates_list:
-    Final_candidates_list.append(row[2])
+  Candidate_options=[]
+  Candidate_list=[]
+  Votes_number=[]
+  Total_votes=0
+  for row in csv_reader:
+    Total_votes +=1
+    Candidate_options.append(row[2])
+    if row[2] not in Candidate_list:
+      Candidate_list.append(row[2])
 
-Votes_count=len(candidates_name)
-for candidate in Final_candidates_list:
-  Percent_candidates= [Final_candidates_list.count(candidate)/Votes_count(candidate)]/100
-  Number_candidates= candidates_name.count(candidate)
-  winner_vote_candidate= max(Number_candidates)
+  for candidate in Candidate_list:
+   Count_candidates= (Candidate_options.count(candidate))
+   Percent_candidates= (Candidate_options.count(candidate)/Total_votes)*100
+ 
+  print("Elections Result\n")
+  print("-----------------------------------")
+  print(f"Total Votes: {Total_votes}\n")
+  for x in range(len(Candidate_list)):
+      print(f"{Count_candidates[x]}")
+
   
-print("Election Results")
-print("------------------------------------------------")
-print(f"Total Votes: {Votes_count}\n")
+
+
+
+
+
+
 
 
 
