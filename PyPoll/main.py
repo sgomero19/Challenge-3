@@ -15,15 +15,15 @@ with open(election_path) as csv_file:
       Candidate_list.append(row[2])
 
   for candidate in Candidate_list:
-   Count_candidates= (Candidate_options.count(candidate))
-   Percent_candidates= (Candidate_options.count(candidate)/Total_votes)*100
+   Count_candidates= [Candidate_options.count(candidate)]
+   Percent_candidates= [Candidate_options.count(candidate)/Total_votes]*100
  
   print("Elections Result\n")
   print("-----------------------------------")
   print(f"Total Votes: {Total_votes}\n")
   for x in range(len(Candidate_list)):
       print(f"{Count_candidates[x]}")
-
+    
   
 
 
