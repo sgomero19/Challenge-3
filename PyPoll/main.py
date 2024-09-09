@@ -38,13 +38,13 @@ def write_results(file_path, total_votes, results, winner):
         print(header)
  
         for candidate, percentage, votes in results:
-            result_line = f'{candidate}: {percentage}% {votes} votes\n'
+            result_line = f'{candidate}: {percentage}% ({votes})\n'
             file.write(result_line)
             print(result_line, end='')
  
         footer = (
             "\n----------------------------------------\n"
-            f'\nThe winner is {winner} with {candidate_votes[winner]} votes.\n'
+            f'\nWinner: {winner}\n'
             "----------------------------------------\n"
         )
         file.write(footer)
